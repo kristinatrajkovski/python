@@ -1,13 +1,16 @@
+  
 def primes_below(n):
-    i=2
+    t=2
     l=[]
-    while i<n:
-        if (i==2) or (i==3) or (i==5):
-            l.append(i)
+    while (t<=n):
+        m=0
+        for i in l:
+            if t%i==0:
+                m=m+1
+                break
 
-        elif (((i-1)%6==0) or ((i+1)%6==0)) and (i%5!=0):
-            l.append(i)
+        if m==0:
+            l.append(t)
         
-        i=i+1
-    
-    return l
+        t=t+1
+return l
