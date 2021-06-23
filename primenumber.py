@@ -1,23 +1,13 @@
+import math
 def is_prime(n):
     t=2
     l=[]
-    while (t<=n):
-        m=0
-        for i in l:
-            if t%i==0:
-                m=m+1
-                break
-
-        if m==0:
-            l.append(t)
-        
-        t=t+1
-    
-    if (n>1):
-        if (l[len(l)-1]==n):
-            return True
-        else:
+    while (t<=math.sqrt(n)):
+        if n%t==0:
             return False
-    else: 
-        return False
+            break
+        t=t+1
+        if (t>=math.sqrt(n))and(n%t!=0):
+            return True
+
 
